@@ -12,11 +12,6 @@ def main(prompt: str) -> str:
 
 @Zuli.on_message(filters.regex(r"Yumi|yumi|baby|Baby"))
 async def deepchat(zuli: Zuli, message):
-    if message.reply_to_message:
-        query = message.text.split(' ', 1)[1]
-        x = main(query)
-        await message.reply(x)
-    else:
-        query = message.text.split(' ', 1)[1]
-        x = main(query)
-        await message.reply(x)
+    query = message.text.split(' ', 1)[1]
+    x = main(query)
+    await message.reply(x)
